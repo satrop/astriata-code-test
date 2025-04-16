@@ -8,12 +8,15 @@
     "sass": "sass src/scss:dist/css",
     "sass:watch": "sass --watch src/scss:dist/css",
     "build": "sass src/scss:dist/css --style compressed && cp src/js/* dist/js/",
-    "start": "npm run sass:watch"
+    "start": "npm run sass:watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "sass": "^1.86.3"
   }
 }
