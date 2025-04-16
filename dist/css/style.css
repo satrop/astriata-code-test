@@ -4,13 +4,108 @@
   box-sizing: border-box;
 }
 
+.font-title {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 body {
-  font-family: "Helvetica", "Arial", sans-serif;
-  line-height: 1.6;
-  color: #333;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #343434;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1,
+.h1 {
+  font-size: clamp(1.375rem, 6.7vi - 0.3rem, 5.063rem);
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.13rem, 3.98vi + 0.13rem, 3.313rem);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1rem, 1.82vi + 0.55rem, 2rem);
+}
+
+.tray {
+  display: grid;
+  grid-template-areas: ". inner .";
+  grid-column: 1/-1;
+  grid-template-columns: 1fr minmax(0, 1900px) 1fr;
+}
+.tray[data-background-color=gold] {
+  background-color: #e7a614;
+}
+.tray-inner {
+  padding-inline: 1rem;
+  display: grid;
+  grid-area: inner;
+  grid-template-areas: "bar content .";
+  grid-row: 1;
+  grid-template-columns: 1fr minmax(0, 1440px) 1fr;
+}
+.tray-inner .content {
+  grid-area: content;
+}
+
+.background-image {
+  grid-column: 1/-1;
+  grid-row: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.bar {
+  grid-area: bar;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "bar1 bar2 bar3";
+  grid-template-columns: minmax(0, 20.8%) minmax(0, 41.6%) minmax(0, 37.5%);
+}
+.bar[data-mix-blend-mode=true] {
+  mix-blend-mode: screen;
+}
+.bar div {
+  width: 100%;
+  height: 100%;
+}
+.bar div:nth-child(1) {
+  grid-area: bar1;
+}
+.bar div:nth-child(2) {
+  grid-area: bar2;
+}
+.bar div:nth-child(3) {
+  grid-area: bar3;
+}
+.bar div[data-background-color=gold-sober] {
+  background-color: #c07e2a;
+}
+.bar div[data-background-color=blue-ceo] {
+  background-color: #003366;
 }
 
 header,
@@ -33,7 +128,6 @@ main section {
   margin-bottom: 2rem;
 }
 main section h2 {
-  color: #3498db;
   margin-bottom: 1rem;
 }
 main section p {

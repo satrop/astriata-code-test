@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Astriata Code Test</title>
-    <link rel="stylesheet" href="dist/css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Project</h1>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Content Section</h2>
-            <p>This is a simple project setup with HTML, SCSS, and JavaScript.</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 My Project</p>
-    </footer>
+    <link rel="stylesheet" href="dist/css/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="tray tray--hero">
+      <img class="background-image" src="/src/img/image_0001.png" alt="" />
+      <div class="tray-inner">
+        <div class="bar" data-mix-blend-mode="true">
+          <div data-background-color="gold-sober"></div>
+          <div data-background-color="blue-ceo"></div>
+          <div data-background-color=""></div>
+        </div>
+        <div class="content">
+          <div class="text-box">
+            <p>
+              This image is part of the grid layout and spans the full width.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="tray" data-background-color="gold">
+      <div class="tray-inner">
+        <div class="bar">
+          <div data-background-color="gold-sober"></div>
+          <div data-background-color="blue-ceo"></div>
+          <div data-background-color=""></div>
+        </div>
+        <div class="content">
+          <h2>Look, Ma! No background image.</h2>
+          <p>This image is part of the grid layout and spans the full width.</p>
+          </div>
+        </div>  
+      </div>
+    </section> -->
 
     <script src="dist/js/main.js"></script>
-</body>
+  </body>
 </html>

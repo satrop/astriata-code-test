@@ -1,0 +1,84 @@
+@use "colors" as *;
+
+// Set up the max size for the main content
+// Set up the inner content area
+// Set up the base for a full width image
+.tray {
+  display: grid;
+  grid-template-areas: ". inner .";
+  grid-column: 1 / -1;
+  grid-template-columns:
+    1fr
+    minmax(0, 1900px)
+    1fr;
+
+  &[data-background-color="gold"] {
+    background-color: $gold-ceo;
+  }
+
+  // Main content for trays
+  &-inner {
+    padding-inline: 1rem;
+    display: grid;
+    grid-area: inner;
+    grid-template-areas: "bar content .";
+    grid-row: 1;
+    grid-template-columns:
+      1fr
+      minmax(0, 1440px)
+      1fr;
+
+    .content {
+      grid-area: content;
+    }
+  }
+}
+
+// Set this to the same grid as the tray to make it full width
+// without the need for position absolute
+.background-image {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+// Set up for the constant bars that flow down the side of the page
+.bar {
+  grid-area: bar;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "bar1 bar2 bar3";
+  grid-template-columns: minmax(0, 20.8%) minmax(0, 41.6%) minmax(0, 37.5%);
+
+  &[data-mix-blend-mode="true"] {
+    mix-blend-mode: screen;
+  }
+
+  div {
+    width: 100%;
+    height: 100%;
+
+    &:nth-child(1) {
+      grid-area: bar1;
+    }
+
+    &:nth-child(2) {
+      grid-area: bar2;
+    }
+
+    &:nth-child(3) {
+      grid-area: bar3;
+    }
+
+    &[data-background-color="gold-sober"] {
+      background-color: $gold-sober;
+    }
+
+    &[data-background-color="blue-ceo"] {
+      background-color: $blue-ceo;
+    }
+  }
+}
