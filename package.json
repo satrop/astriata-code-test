@@ -1,0 +1,19 @@
+{
+  "name": "astriata-code-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass src/scss:dist/css",
+    "sass:watch": "sass --watch src/scss:dist/css",
+    "build": "sass src/scss:dist/css --style compressed && cp src/js/* dist/js/",
+    "start": "npm run sass:watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.86.3"
+  }
+}

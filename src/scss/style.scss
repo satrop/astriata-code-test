@@ -1,0 +1,97 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$text-color: #333;
+$font-stack: "Helvetica", "Arial", sans-serif;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Mixins
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+// Base styles
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+  color: $text-color;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Layout
+header,
+footer {
+  @include flexCenter;
+  padding: 2rem 0;
+  background-color: white;
+
+  h1 {
+    color: black;
+  }
+}
+
+main {
+  padding: 2rem 0;
+
+  section {
+    margin-bottom: 2rem;
+
+    h2 {
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+footer {
+  background-color: green;
+  text-align: center;
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+// Responsive
+@include responsive(tablet) {
+  body {
+    font-size: 0.95rem;
+  }
+}
+
+@include responsive(mobile) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  header,
+  footer {
+    padding: 1rem 0;
+  }
+}
