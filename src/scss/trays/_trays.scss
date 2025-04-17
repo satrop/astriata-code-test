@@ -1,4 +1,46 @@
+@use "../globals/colors" as *;
+
 @forward "tray-nav";
 @forward "tray-header";
 @forward "tray-hero";
 @forward "tray-jump";
+@forward "tray-stats";
+
+.tray-title {
+  position: relative;
+  padding-left: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    // Variable width is calculated in the JS file
+    left: calc(-1 * var(--bar3-width));
+    width: var(--bar3-width);
+    height: 40px;
+  }
+
+  &[data-background-color="gold-sober"] {
+    &::before {
+      background-color: $gold-sober;
+    }
+  }
+
+  &[data-background-color="blue-ceo"] {
+    &::before {
+      background-color: $blue-ceo;
+    }
+  }
+
+  &[data-background-color="blue-sober"] {
+    &::before {
+      background-color: $blue-sober;
+    }
+  }
+
+  &[data-background-color="ivory"] {
+    &::before {
+      background-color: $ivory-dark;
+    }
+  }
+}

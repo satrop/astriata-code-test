@@ -1,0 +1,118 @@
+// Video modal component styles
+@use "../globals/colors" as *;
+@use "../globals/mixins" as mix;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.video-modal {
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 90%;
+  background-color: white;
+  margin: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 0.3s ease-out, scaleIn 0.3s ease-out;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    animation: fadeIn 0.25s ease-out;
+  }
+
+  /* Fix for Safari/Firefox */
+  &[open] {
+    display: block;
+  }
+
+  .modal-content {
+    padding: 2rem;
+    position: relative;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-family: "Cormorant Garamond", serif;
+      color: $blue-ceo;
+    }
+  }
+
+  .video-container {
+    margin: 1.5rem 0;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-placeholder {
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+  }
+
+  .close-x {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 32px;
+    height: 32px;
+    opacity: 0.7;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s ease;
+    transform-origin: center;
+
+    &:hover {
+      opacity: 1;
+      transform: rotate(90deg);
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      content: " ";
+      height: 24px;
+      width: 2px;
+      background-color: $blue-ceo;
+      margin-left: -1px;
+      margin-top: -12px;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}

@@ -111,6 +111,94 @@
       </div>
     </section>
 
-    <script src="dist/js/main.js"></script>
+    <section class="tray tray--stats">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="ivory"
+            data-mix-blend-mode="multiply"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="tray-title" data-background-color="blue-sober">
+            <h2 class="h2">Who we are</h2>
+          </div>
+          <ul>
+            <li>
+              <span class="number">2000</span>
+              <span class="text">member cap by invitation only</span>
+            </li>
+            <li>
+              <span class="number">60</span>
+              <span class="text">countries worldwide</span>
+            </li>
+            <li>
+              <span class="number">60</span>
+              <span class="text">rage age of membership</span>
+            </li>
+            <li>
+              <span class="number">60</span>
+              <span class="text">members under 60</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--video">
+      <img
+        class="background-image"
+        src="/src/img/image_0002.jpg"
+        alt="Alt image description"
+      />
+      <div class="tray--inner">
+        <div class="bar">
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div data-background-color=""></div>
+        </div>
+        <div class="content">
+          <h2>Experience the Diversity of Life</h2>
+          <div class="text-box">
+            <p>
+              Explore cultures and broaden your perspective with rare entry into
+              historic places at any of our highly curated collection of 25+
+              major events annually that range widely in topic and destination.
+              Traveling with us allows you to rub elbows with diverse global
+              leaders, including foreign dignitaries, government officials,
+              ambassadors, and cultural icons.
+            </p>
+            <button id="openModal" class="btn btn--primary">
+              Watch Our Story
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <dialog id="myModal" class="video-modal">
+        <div class="modal-content">
+          <button
+            id="closeModal"
+            class="close-x"
+            aria-label="Close modal"
+          ></button>
+          <h2>Our Story</h2>
+          <div class="video-container">
+            <!-- Video placeholder -->
+            <div class="video-placeholder">Video will appear here</div>
+          </div>
+        </div>
+      </dialog>
+    </section>
+
+    <script src="/src/js/main.js"></script>
   </body>
 </html>

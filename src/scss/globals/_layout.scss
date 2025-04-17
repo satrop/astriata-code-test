@@ -92,6 +92,10 @@ body {
     &[data-background-color="blue-sober"] {
       background-color: $blue-sober;
     }
+
+    &[data-background-color="ivory"] {
+      background-color: $ivory;
+    }
   }
 }
 
@@ -101,4 +105,8 @@ body {
 
 [data-mix-blend-mode="overlay"] {
   mix-blend-mode: overlay;
+}
+
+[data-mix-blend-mode="multiply"] {
+  mix-blend-mode: multiply;
 }
