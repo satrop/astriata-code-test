@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass src/scss:dist/css",
     "sass:watch": "sass --watch src/scss:dist/css",
-    "build": "sass src/scss:dist/css --style compressed && cp src/js/* dist/js/",
+    "build": "sass src/scss:dist/css --style compressed",
     "start": "npm run sass:watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d ."
