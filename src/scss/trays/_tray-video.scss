@@ -1,0 +1,24 @@
+.tray--video {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2,
+    .h2 {
+      color: white;
+      margin-top: 110px;
+    }
+
+    .play-button {
+      margin-bottom: 32px;
+    }
+
+    .text-box {
+      align-self: self-end;
+      justify-self: end;
+      margin-right: -240px;
+      margin-bottom: 178px;
+    }
+  }
+}

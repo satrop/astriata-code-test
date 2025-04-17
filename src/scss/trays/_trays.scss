@@ -5,6 +5,12 @@
 @forward "tray-hero";
 @forward "tray-jump";
 @forward "tray-stats";
+@forward "tray-video";
+
+// Global styles for trays
+.tray {
+  overflow-x: hidden;
+}
 
 .tray-title {
   position: relative;

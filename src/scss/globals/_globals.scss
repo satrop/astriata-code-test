@@ -11,6 +11,7 @@ html {
 // Fonts
 $font-title: "Cormorant Garamond", serif;
 $font-body: "Montserrat", sans-serif;
+$font-oswald: "Oswald", sans-serif;
 
 .font-title {
   font-family: $font-title;
@@ -20,6 +21,12 @@ $font-body: "Montserrat", sans-serif;
 
 .font-body {
   font-family: $font-body;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-oswald {
+  font-family: $font-oswald;
   font-optical-sizing: auto;
   font-style: normal;
 }

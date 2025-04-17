@@ -47,6 +47,12 @@ html {
   font-style: normal;
 }
 
+.font-oswald {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 body {
   line-height: 30px;
   line-height: 1.875;
@@ -210,6 +216,8 @@ body {
 }
 
 .text-box {
+  font-size: 16px;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -324,6 +332,51 @@ body {
 }
 .video-modal .close-x:after {
   transform: rotate(-45deg);
+}
+
+.play-button {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  text-transform: uppercase;
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  cursor: pointer;
+}
+.play-button span {
+  padding: 6px 20px 6px 10px;
+  margin-right: -10px;
+  background: linear-gradient(-90deg, rgba(52, 52, 52, 0.8) 0%, rgba(52, 52, 52, 0.8) 60%, rgba(52, 52, 52, 0) 100%);
+}
+.play-button .icon {
+  width: 70px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #343434;
+  border: solid 1px white;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+.play-button .icon::before, .play-button .icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 1px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+}
+.play-button .icon::before {
+  transform: translate(-50%, -6px) rotate(30deg);
+}
+.play-button .icon::after {
+  transform: translate(-50%, 6px) rotate(-30deg);
+}
+.play-button:hover .icon {
+  background-color: #102139;
 }
 
 .tray--nav .content {
@@ -442,6 +495,30 @@ section[id] {
   width: 100%;
   color: white;
   padding-left: 1rem;
+}
+
+.tray--video .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tray--video .content h2,
+.tray--video .content .h2 {
+  color: white;
+  margin-top: 110px;
+}
+.tray--video .content .play-button {
+  margin-bottom: 32px;
+}
+.tray--video .content .text-box {
+  align-self: self-end;
+  justify-self: end;
+  margin-right: -240px;
+  margin-bottom: 178px;
+}
+
+.tray {
+  overflow-x: hidden;
 }
 
 .tray-title {

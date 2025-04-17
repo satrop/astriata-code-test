@@ -1,0 +1,62 @@
+@use "../globals/colors" as *;
+@use "../globals/mixins" as mix;
+@use "../globals/globals" as *;
+
+.play-button {
+  font-family: $font-oswald;
+  font-weight: 300;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  text-transform: uppercase;
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    padding: 6px 20px 6px 10px;
+    margin-right: -10px;
+    background: linear-gradient(
+      -90deg,
+      rgba(52, 52, 52, 0.8) 0%,
+      rgba(52, 52, 52, 0.8) 60%,
+      rgba(52, 52, 52, 0) 100%
+    );
+  }
+
+  .icon {
+    width: 70px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: $gray;
+    border: solid 1px white;
+    position: relative;
+    transition: background-color $anim;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 1px;
+      background-color: white;
+      top: 50%;
+      left: 50%;
+    }
+
+    &::before {
+      transform: translate(-50%, -6px) rotate(30deg);
+    }
+
+    &::after {
+      transform: translate(-50%, 6px) rotate(-30deg);
+    }
+  }
+
+  &:hover {
+    .icon {
+      background-color: $blue-sober;
+    }
+  }
+}
