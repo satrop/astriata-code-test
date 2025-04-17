@@ -2,6 +2,28 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed");
 
+  // Function to create overlay for images with data-overlay="true"
+  const createImageOverlays = () => {
+    const imagesWithOverlay = document.querySelectorAll(
+      '.background-image[data-overlay="true"]'
+    );
+
+    imagesWithOverlay.forEach((img) => {
+      // Create the overlay element
+      const overlay = document.createElement("div");
+      overlay.classList.add("image-overlay");
+
+      // Get the parent element of the image
+      const parent = img.parentElement;
+
+      // Insert the overlay after the image
+      parent.insertBefore(overlay, img.nextSibling);
+    });
+  };
+
+  // Run the overlay function
+  createImageOverlays();
+
   // Function to set ::before element width and position to match bar3
   const adjustTrayTitleBeforeElement = () => {
     // Get all bar elements that have a third div (representing bar3)
@@ -49,12 +71,18 @@ document.addEventListener("DOMContentLoaded", () => {
   adjustTrayTitleBeforeElement();
   window.addEventListener("resize", adjustTrayTitleBeforeElement);
 
-  // Video Modal functionality
-  const openModalBtn = document.getElementById("openModal");
-  const closeModalBtn = document.getElementById("closeModal");
-  const modal = document.getElementById("myModal");
+  // Video Modal functionality - Multiple modals support
+  // Get all play buttons with data-modal-target attribute
+  const playButtons = document.querySelectorAll("button[data-modal-target]");
 
-  if (openModalBtn && closeModalBtn && modal) {
+  // Set up each modal
+  playButtons.forEach((button) => {
+    // Get the target modal ID from the button's data-modal-target attribute
+    const modalId = button.getAttribute("data-modal-target");
+    const modal = document.getElementById(modalId);
+
+    if (!modal) return;
+
     // Pre-position the dialog (even before opening)
     if (!modal.hasAttribute("open")) {
       modal.style.opacity = "0";
@@ -63,13 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.opacity = "1";
     }
 
-    openModalBtn.addEventListener("click", () => {
+    // Open modal when clicking the button
+    button.addEventListener("click", () => {
       modal.showModal();
     });
 
-    closeModalBtn.addEventListener("click", () => {
-      modal.close();
-    });
+    // Set up close button functionality
+    const closeBtn = modal.querySelector("[data-close-modal]");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        modal.close();
+      });
+    }
 
     // Close modal when clicking on backdrop (outside the modal content)
     modal.addEventListener("click", (e) => {
@@ -91,5 +124,5 @@ document.addEventListener("DOMContentLoaded", () => {
         e.stopPropagation();
       });
     }
-  }
+  });
 });

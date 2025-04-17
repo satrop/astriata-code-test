@@ -6,10 +6,30 @@
 @forward "tray-jump";
 @forward "tray-stats";
 @forward "tray-video";
+@forward "tray-title";
+@forward "tray-quote";
+@forward "tray-cta";
+@forward "tray-three-up";
+@forward "tray-magazine";
+@forward "tray-footer";
 
 // Global styles for trays
 .tray {
   overflow-x: hidden;
+
+  .overlay {
+    display: grid;
+    width: calc(100% + 1rem);
+    height: 100%;
+    background-color: $gray;
+    mix-blend-mode: multiply;
+    grid-row: 1 / -1;
+    grid-column-start: content-start;
+    grid-column-end: inner-end;
+    pointer-events: none;
+    z-index: 0;
+    position: relative;
+  }
 }
 
 .tray-title {
@@ -29,6 +49,12 @@
   &[data-background-color="gold-sober"] {
     &::before {
       background-color: $gold-sober;
+    }
+  }
+
+  &[data-background-color="gold-ceo"] {
+    &::before {
+      background-color: $gold-ceo;
     }
   }
 

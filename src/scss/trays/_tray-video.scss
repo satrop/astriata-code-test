@@ -1,8 +1,10 @@
+@use "../globals/colors" as *;
+
 .tray--video {
   .content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 
     h2,
     .h2 {
@@ -10,7 +12,7 @@
       margin-top: 110px;
     }
 
-    .play-button {
+    .cta-button {
       margin-bottom: 32px;
     }
 
@@ -18,7 +20,24 @@
       align-self: self-end;
       justify-self: end;
       margin-right: -240px;
-      margin-bottom: 178px;
+    }
+
+    &:has(h2) {
+      justify-content: space-between;
+
+      .text-box {
+        margin-bottom: 178px;
+      }
+    }
+  }
+  &.tray--video__alt {
+    .content .cta-button {
+      margin-block: 62px 100px;
+
+      span {
+        background: transparent;
+        color: $gray;
+      }
     }
   }
 }
