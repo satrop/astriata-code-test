@@ -1,5 +1,5 @@
 @use "../globals/colors" as *;
-@use "../globals/mixins" as mix;
+@use "../globals/mixins" as *;
 @use "../globals/globals" as *;
 
 .tray--quote {
@@ -37,21 +37,22 @@
   }
 
   blockquote {
+    @include rem(28);
     font-family: $font-title;
-    font-size: $fs-lg;
-    font-weight: 600;
+    font-weight: 700;
     color: $blue-ceo;
 
     p {
       padding-inline: 2rem;
-      @include mix.figma-line-height(50, 32);
+      @include figma-line-height(50, 32);
     }
   }
 
   cite {
-    @include mix.figma-line-height(30, 18);
+    @include figma-line-height(30, 18);
+    padding-inline: 2rem;
     display: block;
-    margin-top: 60px;
+    margin-top: 50px;
     font-family: $font-body;
     font-size: $fs-sm;
     font-weight: 400;

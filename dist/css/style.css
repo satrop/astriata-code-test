@@ -33,37 +33,16 @@ a:hover {
 
 @font-face {
   font-family: "romie";
-  src: url("../fonts/Romie-Regular.woff2") format("woff2");
+  src: url("/src/fonts/Romie-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "romie";
-  src: url("../fonts/Romie-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "romie";
-  src: url("../fonts/Romie-Bold.woff2") format("woff2");
+  src: url("/src/fonts/Romie-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "romie";
-  src: url("../fonts/Romie-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "romie";
-  src: url("../fonts/Romie-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
   font-display: swap;
 }
 html {
@@ -102,7 +81,7 @@ h2,
 h3,
 .h3 {
   font-family: "romie", serif;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.1;
   text-wrap: balance;
   text-transform: uppercase;
@@ -623,21 +602,24 @@ section[id] {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 60px;
+  gap: 3.75rem;
+  margin-block: 60px;
+  margin-left: 1rem;
 }
 .tray--stats .content ul li {
-  flex: 1 1 calc(25% - 20px);
-  min-width: 200px;
+  flex: 1 1 calc(25% - 3.75rem);
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .tray--stats .content ul li .number {
   font-family: "romie", serif;
   font-size: 6.25rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
+}
+.tray--stats .content ul li .number .small {
+  font-size: 40px;
+  font-size: 2.5rem;
 }
 .tray--stats .content ul li .text {
   background-color: #343434;
@@ -710,9 +692,10 @@ section[id] {
   top: 50%;
 }
 .tray--quote blockquote {
+  font-size: 28px;
+  font-size: 1.75rem;
   font-family: "romie", serif;
-  font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #003366;
 }
 .tray--quote blockquote p {
@@ -723,8 +706,9 @@ section[id] {
 .tray--quote cite {
   line-height: 30px;
   line-height: 1.6666666667;
+  padding-inline: 2rem;
   display: block;
-  margin-top: 60px;
+  margin-top: 50px;
   font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;

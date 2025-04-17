@@ -1,29 +1,5 @@
 // Main JavaScript file
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
-
-  // Function to create overlay for images with data-overlay="true"
-  const createImageOverlays = () => {
-    const imagesWithOverlay = document.querySelectorAll(
-      '.background-image[data-overlay="true"]'
-    );
-
-    imagesWithOverlay.forEach((img) => {
-      // Create the overlay element
-      const overlay = document.createElement("div");
-      overlay.classList.add("image-overlay");
-
-      // Get the parent element of the image
-      const parent = img.parentElement;
-
-      // Insert the overlay after the image
-      parent.insertBefore(overlay, img.nextSibling);
-    });
-  };
-
-  // Run the overlay function
-  createImageOverlays();
-
   // Function to set ::before element width and position to match bar3
   const adjustTrayTitleBeforeElement = () => {
     // Get all bar elements that have a third div (representing bar3)
@@ -71,9 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
   adjustTrayTitleBeforeElement();
   window.addEventListener("resize", adjustTrayTitleBeforeElement);
 
-  // Video Modal functionality - Multiple modals support
+  // Video Modal functionality - Multiple modals support with accessibility enhancements
   // Get all play buttons with data-modal-target attribute
   const playButtons = document.querySelectorAll("button[data-modal-target]");
+
+  // Keep track of last focused element before modal opened
+  let lastFocusedElement = null;
 
   // Set up each modal
   playButtons.forEach((button) => {
@@ -82,6 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById(modalId);
 
     if (!modal) return;
+
+    // Add proper ARIA role and label
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+
+    // Get modal title for aria-labelledby
+    const modalTitle = modal.querySelector("h2");
+    if (modalTitle) {
+      const titleId = `${modalId}-title`;
+      modalTitle.id = titleId;
+      modal.setAttribute("aria-labelledby", titleId);
+    }
 
     // Pre-position the dialog (even before opening)
     if (!modal.hasAttribute("open")) {
@@ -93,7 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Open modal when clicking the button
     button.addEventListener("click", () => {
+      lastFocusedElement = document.activeElement;
       modal.showModal();
+
+      // Focus the close button when modal opens
+      const closeBtn = modal.querySelector("[data-close-modal]");
+      if (closeBtn) {
+        setTimeout(() => closeBtn.focus(), 50);
+      }
     });
 
     // Set up close button functionality
@@ -101,6 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
         modal.close();
+        // Return focus to trigger button when modal closes
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+        }
       });
     }
 
@@ -114,6 +116,45 @@ document.addEventListener("DOMContentLoaded", () => {
         e.clientY > modalDimensions.bottom
       ) {
         modal.close();
+        // Return focus to the button that opened the modal
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+        }
+      }
+    });
+
+    // Handle escape key (native dialog behavior already supports this,
+    // but we need to add focus management)
+    modal.addEventListener("cancel", () => {
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    });
+
+    // Note: The dialog element has some built-in focus management,
+    // but we add this to ensure consistent behavior across browsers
+    // This is a simplified version that just handles the edge cases
+    modal.addEventListener("keydown", (e) => {
+      if (e.key === "Tab") {
+        const focusableElements = modal.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+
+        if (focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        // If shift+tab on first element, move to last
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+        // If tab on last element, move to first
+        else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
       }
     });
 

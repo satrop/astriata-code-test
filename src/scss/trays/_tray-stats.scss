@@ -1,6 +1,6 @@
 @use "../globals/globals" as *;
 @use "../globals/colors" as *;
-@use "../globals/mixins" as mix;
+@use "../globals/mixins" as *;
 
 .tray--stats {
   $size: 40px;
@@ -16,21 +16,24 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 60px;
+      gap: 3.75rem;
+      margin-block: 60px;
+      margin-left: 1rem;
 
       li {
-        flex: 1 1 calc(25% - 20px);
-        min-width: 200px;
+        flex: 1 1 calc(25% - 3.75rem);
         display: flex;
         flex-direction: column;
-        align-items: center;
 
         .number {
           font-family: $font-title;
           font-size: $fs-xxxl;
           font-weight: 700;
-          line-height: 1;
+          line-height: 1.2;
+
+          .small {
+            @include rem(40);
+          }
         }
 
         .text {
