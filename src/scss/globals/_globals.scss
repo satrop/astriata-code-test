@@ -91,3 +91,8 @@ h3,
 .h3 {
   font-size: clamp($fs-rg, 1.82vi + 0.55rem, $fs-lg);
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}

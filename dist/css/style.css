@@ -102,6 +102,11 @@ h3,
   font-size: clamp(1rem, 1.82vi + 0.55rem, 2rem);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   background-color: #f6f7eb;
 }
