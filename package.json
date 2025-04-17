@@ -10,7 +10,9 @@
     "copy-assets": "mkdir -p dist/img && cp -r src/img/* dist/img/ && mkdir -p dist/fonts && cp -r src/fonts/* dist/fonts/ && mkdir -p dist/js && cp -r src/js/* dist/js/",
     "convert-images": "node scripts/convert-to-webp.js",
     "update-html": "node scripts/update-html.js",
-    "build": "npm run copy-assets && npm run convert-images && sass src/scss:dist/css --style compressed && npm run update-html",
+    "fix-html": "node scripts/fix-html-direct.js",
+    "rebuild-images": "node scripts/rebuild-images.js",
+    "build": "npm run copy-assets && sass src/scss:dist/css --style compressed",
     "start": "npm run copy-assets && npm run sass:watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d ."
@@ -20,7 +22,11 @@
   "license": "ISC",
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "jsdom": "^24.0.0",
     "sass": "^1.86.3",
     "sharp": "^0.34.1"
+  },
+  "dependencies": {
+    "jsdom": "^26.1.0"
   }
 }
