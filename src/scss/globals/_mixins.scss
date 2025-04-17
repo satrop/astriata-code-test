@@ -1,0 +1,54 @@
+@use "sass:math";
+
+// Mixins
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+// Convert px to rem
+@mixin rem($size) {
+  font-size: $size + px; // Fallback for older browsers
+  font-size: math.div($size, 16) + rem;
+}
+
+// Usage example for other properties
+@mixin size-rem($property, $size) {
+  #{$property}: $size + px; // Fallback for older browsers
+  #{$property}: math.div($size, 16) + rem;
+}
+
+// Convert Figma line height (px) to unitless line-height
+@mixin figma-line-height($line-height-px, $font-size-px) {
+  line-height: $line-height-px + px; // Fallback for older browsers
+  line-height: math.div($line-height-px, $font-size-px); // Unitless value
+}
+
+// Examples
+
+// .title {
+//   @include rem(24); // Sets font-size to 24px / 1.5rem
+// }
+
+// .container {
+//   @include size-rem(margin-bottom, 20); // Sets margin-bottom to 20px / 1.25rem
+//   @include size-rem(padding, 16); // Sets padding to 16px / 1rem
+// }
+
+// .heading {
+//   font-size: 20px;
+//   @include figma-line-height(28, 20); // If Figma shows 28px line height for 20px font
+// }

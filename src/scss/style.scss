@@ -1,60 +1,12 @@
-@use "colors" as *;
-@use "mixins" as mix;
-@use "reset";
-@use "globals";
-@use "layout";
+@use "globals/colors" as *;
+@use "globals/mixins" as mix;
+@use "globals/reset";
+@use "globals/globals";
+@use "globals/layout";
 
-// Layout
-header,
-footer {
-  @include mix.flexCenter;
-  padding: 2rem 0;
-  background-color: white;
+// Import components
+@use "components/button";
+@use "components/text-box";
 
-  h1 {
-    color: black;
-  }
-}
-
-main {
-  padding: 2rem 0;
-
-  section {
-    margin-bottom: 2rem;
-
-    h2 {
-      margin-bottom: 1rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-    }
-  }
-}
-
-footer {
-  background-color: green;
-  text-align: center;
-
-  p {
-    font-size: 0.9rem;
-  }
-}
-
-// Responsive
-@include mix.responsive(tablet) {
-  body {
-    font-size: 0.95rem;
-  }
-}
-
-@include mix.responsive(mobile) {
-  body {
-    font-size: 0.9rem;
-  }
-
-  header,
-  footer {
-    padding: 1rem 0;
-  }
-}
+// Import Trays
+@use "trays/trays";

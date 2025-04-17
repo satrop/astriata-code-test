@@ -1,0 +1,30 @@
+@use "../globals/mixins" as mix;
+
+// Use unitless here as the mixin is adding the unit
+$size: 19;
+
+.tray--header {
+  color: white;
+
+  .content {
+    @include mix.size-rem(margin-block, $size);
+  }
+
+  .title {
+    text-transform: uppercase;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+}

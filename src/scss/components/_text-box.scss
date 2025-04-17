@@ -1,0 +1,22 @@
+@use "../globals/mixins" as mix;
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 82ch;
+  padding: 2em 240px 3.32em 1.25em;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(52, 52, 52, 0.8) 0%,
+    rgba(52, 52, 52, 0.8) 60%,
+    rgba(52, 52, 52, 0) 100%
+  );
+
+  .title {
+    @include mix.rem(22);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}

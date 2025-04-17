@@ -1,0 +1,55 @@
+// Button component styles
+@use "../globals/colors" as *;
+@use "../globals/mixins" as mix;
+@use "sass:color";
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &--primary {
+    background-color: $blue-ceo;
+    color: white;
+
+    &:hover {
+      background-color: color.scale($blue-ceo, $lightness: -10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $gold-sober;
+    color: black;
+
+    &:hover {
+      background-color: color.scale($gold-sober, $lightness: -10%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid currentColor;
+
+    &.btn--primary {
+      color: $blue-ceo;
+
+      &:hover {
+        background-color: rgba($blue-ceo, 0.1);
+      }
+    }
+
+    &.btn--secondary {
+      color: $gold-sober;
+
+      &:hover {
+        background-color: rgba($gold-sober, 0.1);
+      }
+    }
+  }
+}

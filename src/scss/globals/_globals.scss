@@ -1,4 +1,12 @@
+@forward "animations";
+
 @use "colors" as *;
+@use "mixins" as mix;
+
+// Enable smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
 
 // Fonts
 $font-title: "Cormorant Garamond", serif;
@@ -27,6 +35,7 @@ $fs-xxxl: 10.25rem; // 164px
 
 // Base styles
 body {
+  @include mix.figma-line-height(30, 16);
   font-family: $font-body;
   color: $gray;
 }

@@ -1,5 +1,9 @@
 @use "colors" as *;
 
+body {
+  background-color: $ivory;
+}
+
 // Set up the max size for the main content
 // Set up the inner content area
 // Set up the base for a full width image
@@ -16,8 +20,16 @@
     background-color: $gold-ceo;
   }
 
+  &[data-background-color="gray"] {
+    background-color: $gray;
+  }
+
+  &[data-background-color="ivory-dark"] {
+    background-color: $ivory-dark;
+  }
+
   // Main content for trays
-  &-inner {
+  &--inner {
     padding-inline: 1rem;
     display: grid;
     grid-area: inner;
@@ -40,7 +52,7 @@
   grid-column: 1 / -1;
   grid-row: 1;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -52,10 +64,6 @@
   height: 100%;
   grid-template-areas: "bar1 bar2 bar3";
   grid-template-columns: minmax(0, 20.8%) minmax(0, 41.6%) minmax(0, 37.5%);
-
-  &[data-mix-blend-mode="true"] {
-    mix-blend-mode: screen;
-  }
 
   div {
     width: 100%;
@@ -80,5 +88,17 @@
     &[data-background-color="blue-ceo"] {
       background-color: $blue-ceo;
     }
+
+    &[data-background-color="blue-sober"] {
+      background-color: $blue-sober;
+    }
   }
+}
+
+[data-mix-blend-mode="screen"] {
+  mix-blend-mode: screen;
+}
+
+[data-mix-blend-mode="overlay"] {
+  mix-blend-mode: overlay;
 }

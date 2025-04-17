@@ -15,38 +15,101 @@
     />
   </head>
   <body>
-    <section class="tray tray--hero">
-      <img class="background-image" src="/src/img/image_0001.png" alt="" />
-      <div class="tray-inner">
-        <div class="bar" data-mix-blend-mode="true">
-          <div data-background-color="gold-sober"></div>
-          <div data-background-color="blue-ceo"></div>
-          <div data-background-color=""></div>
-        </div>
-        <div class="content">
-          <div class="text-box">
-            <p>
-              This image is part of the grid layout and spans the full width.
-            </p>
-          </div>
-        </div>
+    <nav class="tray tray--nav">
+      <div class="tray--inner">
+        <ul class="content">
+          <li><a href="/dummy-link/">My Account</a></li>
+          <li><a href="/dummy-link/">Search</a></li>
+        </ul>
       </div>
-    </section>
+    </nav>
 
-    <!-- <section class="tray" data-background-color="gold">
-      <div class="tray-inner">
+    <header class="tray tray--header" data-background-color="gray">
+      <div class="tray--inner">
         <div class="bar">
           <div data-background-color="gold-sober"></div>
           <div data-background-color="blue-ceo"></div>
           <div data-background-color=""></div>
         </div>
         <div class="content">
-          <h2>Look, Ma! No background image.</h2>
-          <p>This image is part of the grid layout and spans the full width.</p>
-          </div>
-        </div>  
+          <nav>
+            <a href="/dummy-link">Discover US</a>
+          </nav>
+          <img class="logo" src="/src/img/logo.svg" alt="" />
+          <h1 class="title">Enrich your life</h1>
+        </div>
       </div>
-    </section> -->
+    </header>
+
+    <section class="tray tray--hero">
+      <img
+        class="background-image"
+        src="/src/img/image_0001.png"
+        alt="Ferrari's out on a drive in Italy"
+      />
+      <div class="tray--inner">
+        <div class="bar">
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="blue-sober"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="text-box">
+            <div class="title">Welcome</div>
+            <p>
+              We bring members together in intimate settings around the globe,
+              <a href="/dummy-link/">TEST LINK</a>
+              providing unique opportunities for individual development through
+              shared experiences, executive education, valuable peer
+              relationships, and open exchange of innovative ideas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--jump" data-background-color="ivory-dark">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="text">
+            BOUNDLESS CURIOSITY: Meet the Incoming International<br />Chair of
+            the Board of Directors<br />
+            <div class="title">New</div>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="#jump1" aria-label="Jump to section 1">
+                  <img src="/src/img/thumb_0001.jpg" alt="Text for image." />
+                </a>
+              </li>
+              <li>
+                <a href="#jump2" aria-label="Jump to section 2">
+                  <img src="/src/img/thumb_0002.jpg" alt="Text for image." />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
 
     <script src="dist/js/main.js"></script>
   </body>

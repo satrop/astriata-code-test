@@ -1,0 +1,17 @@
+.tray--hero {
+  $size: 86px;
+
+  .tray--inner {
+    .content {
+      align-self: flex-end;
+      margin-block: $size;
+    }
+
+    .bar {
+      div:nth-child(3) {
+        height: $size;
+        align-self: flex-end;
+      }
+    }
+  }
+}
