@@ -33,14 +33,14 @@ a:hover {
 
 @font-face {
   font-family: "romie";
-  src: url("src/fonts/Romie-Regular.woff2") format("woff2");
+  src: url("../fonts/Romie-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "romie";
-  src: url("src/fonts/Romie-Bold.woff2") format("woff2");
+  src: url("../fonts/Romie-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -403,7 +403,7 @@ body {
   background: transparent;
 }
 .cta-button[data-button-type=view] .icon {
-  background: url("src/img/eye.svg") no-repeat center #003366;
+  background: url("../img/eye.svg") no-repeat center #003366;
 }
 .cta-button[data-button-type=view] .icon::before, .cta-button[data-button-type=view] .icon::after {
   display: none;

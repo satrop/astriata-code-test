@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass src/scss:dist/css",
     "sass:watch": "sass --watch src/scss:dist/css",
-    "build": "sass src/scss:dist/css --style compressed",
-    "start": "npm run sass:watch",
+    "copy-assets": "mkdir -p dist/img && cp -r src/img/* dist/img/ && mkdir -p dist/fonts && cp -r src/fonts/* dist/fonts/ && mkdir -p dist/js && cp -r src/js/* dist/js/",
+    "build": "npm run copy-assets && sass src/scss:dist/css --style compressed",
+    "start": "npm run copy-assets && npm run sass:watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d ."
   },
