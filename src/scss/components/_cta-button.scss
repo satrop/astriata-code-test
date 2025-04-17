@@ -1,0 +1,155 @@
+@use "../globals/colors" as *;
+@use "../globals/mixins" as mix;
+@use "../globals/globals" as *;
+
+.cta-button {
+  font-family: $font-oswald;
+  font-weight: 300;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  text-transform: uppercase;
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+
+  span {
+    padding: 6px 20px 6px 10px;
+    margin-right: -10px;
+    background: linear-gradient(
+      -90deg,
+      rgba(52, 52, 52, 0.8) 0%,
+      rgba(52, 52, 52, 0.8) 60%,
+      rgba(52, 52, 52, 0) 100%
+    );
+  }
+
+  .icon {
+    width: 70px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: $gray;
+    border: solid 1px white;
+    position: relative;
+    transition: background-color $anim;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 1px;
+      background-color: white;
+      top: 50%;
+      left: 50%;
+      transition: background-color $anim;
+    }
+
+    &::before {
+      transform: translate(-50%, -6px) rotate(30deg);
+    }
+
+    &::after {
+      transform: translate(-50%, 6px) rotate(-30deg);
+    }
+  }
+
+  &[data-button-type="view"] {
+    color: $gray;
+
+    span {
+      background: transparent;
+    }
+
+    .icon {
+      background: url("/src/img/eye.svg") no-repeat center $blue-ceo;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &:hover {
+      .icon {
+        background-color: $blue-sober;
+      }
+    }
+  }
+
+  &[data-button-type="white"] {
+    span {
+      color: $gray;
+      background: linear-gradient(
+        -90deg,
+        rgba(246, 247, 235, 0.8) 0%,
+        rgba(246, 247, 235, 0.8) 60%,
+        rgba(246, 247, 235, 0) 100%
+      );
+    }
+
+    .icon {
+      transform: rotate(-90deg);
+      background-color: white;
+      border-color: $gray;
+
+      &::before,
+      &::after {
+        background-color: $gray;
+        width: 18px;
+      }
+
+      &::before {
+        transform: translate(-50%, -6px) rotate(45deg);
+      }
+
+      &::after {
+        transform: translate(-50%, 6px) rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      .icon {
+        &::before,
+        &::after {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &[data-button-clear="true"] {
+    color: white;
+
+    span {
+      background: transparent;
+    }
+
+    .icon {
+      background-color: transparent;
+      border-color: white;
+
+      &::before,
+      &::after {
+        background-color: white;
+        width: 18px;
+      }
+
+      &::before {
+        transform: translate(-50%, -6px) rotate(45deg);
+      }
+
+      &::after {
+        transform: translate(-50%, 6px) rotate(-45deg);
+      }
+    }
+  }
+
+  &:hover {
+    .icon {
+      background-color: $blue-sober;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@use "../globals/colors" as *;
+
+@forward "tray-nav";
+@forward "tray-header";
+@forward "tray-hero";
+@forward "tray-jump";
+@forward "tray-stats";
+@forward "tray-video";
+@forward "tray-title";
+@forward "tray-quote";
+@forward "tray-cta";
+@forward "tray-three-up";
+@forward "tray-magazine";
+@forward "tray-footer";
+
+// Global styles for trays
+.tray {
+  overflow-x: hidden;
+
+  .overlay {
+    display: grid;
+    width: calc(100% + 1rem);
+    height: 100%;
+    background-color: $gray;
+    mix-blend-mode: multiply;
+    grid-row: 1 / -1;
+    grid-column-start: content-start;
+    grid-column-end: inner-end;
+    pointer-events: none;
+    z-index: 0;
+    position: relative;
+  }
+}
+
+.tray-title {
+  position: relative;
+  padding-left: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    // Variable width is calculated in the JS file
+    left: calc(-1 * var(--bar3-width));
+    width: var(--bar3-width);
+    height: 40px;
+  }
+
+  &[data-background-color="gold-sober"] {
+    &::before {
+      background-color: $gold-sober;
+    }
+  }
+
+  &[data-background-color="gold-ceo"] {
+    &::before {
+      background-color: $gold-ceo;
+    }
+  }
+
+  &[data-background-color="blue-ceo"] {
+    &::before {
+      background-color: $blue-ceo;
+    }
+  }
+
+  &[data-background-color="blue-sober"] {
+    &::before {
+      background-color: $blue-sober;
+    }
+  }
+
+  &[data-background-color="ivory"] {
+    &::before {
+      background-color: $ivory-dark;
+    }
+  }
+}

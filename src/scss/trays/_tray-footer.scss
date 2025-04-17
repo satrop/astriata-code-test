@@ -1,0 +1,42 @@
+@use "../globals/mixins" as *;
+
+.tray--footer {
+  .content {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-block: 50px;
+    font-weight: 300;
+
+    > * {
+      width: 33.33%;
+      border-right: 1px solid white;
+      padding: 0.5rem 1rem;
+      @include figma-line-height(26, 16);
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    .social {
+      ul {
+        margin-top: 5px;
+
+        li {
+          a {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

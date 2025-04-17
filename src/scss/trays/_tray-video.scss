@@ -1,0 +1,43 @@
+@use "../globals/colors" as *;
+
+.tray--video {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2,
+    .h2 {
+      color: white;
+      margin-top: 110px;
+    }
+
+    .cta-button {
+      margin-bottom: 32px;
+    }
+
+    .text-box {
+      align-self: self-end;
+      justify-self: end;
+      margin-right: -240px;
+    }
+
+    &:has(h2) {
+      justify-content: space-between;
+
+      .text-box {
+        margin-bottom: 178px;
+      }
+    }
+  }
+  &.tray--video__alt {
+    .content .cta-button {
+      margin-block: 62px 100px;
+
+      span {
+        background: transparent;
+        color: $gray;
+      }
+    }
+  }
+}

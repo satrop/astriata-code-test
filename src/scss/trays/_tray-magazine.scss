@@ -1,0 +1,39 @@
+.tray--magazine {
+  .content {
+    margin-block: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+    justify-content: space-between;
+    color: white;
+    position: relative;
+    z-index: 1;
+
+    @media (width > 768px) {
+      flex-direction: row;
+    }
+
+    .tray-title {
+      margin-bottom: 30px;
+    }
+
+    p,
+    .cta-button {
+      padding-left: 1rem;
+    }
+
+    p {
+      max-width: 58ch;
+    }
+
+    .cta-button {
+      justify-self: start;
+      margin-top: 60px;
+
+      span {
+        padding-left: 0;
+      }
+    }
+  }
+}

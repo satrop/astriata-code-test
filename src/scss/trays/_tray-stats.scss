@@ -1,0 +1,48 @@
+@use "../globals/globals" as *;
+@use "../globals/colors" as *;
+@use "../globals/mixins" as *;
+
+.tray--stats {
+  $size: 40px;
+
+  .tray--inner {
+    box-shadow: inset 0 $size 0 $ivory, inset 0 calc($size * 2) 0 $ivory;
+  }
+  .content {
+    margin-top: $size;
+    margin-bottom: calc($size * 2);
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 3.75rem;
+      margin-block: 60px;
+      margin-left: 1rem;
+
+      li {
+        flex: 1 1 calc(25% - 3.75rem);
+        display: flex;
+        flex-direction: column;
+
+        .number {
+          font-family: $font-title;
+          font-size: $fs-xxxl;
+          font-weight: 700;
+          line-height: 1.2;
+
+          .small {
+            @include rem(40);
+          }
+        }
+
+        .text {
+          background-color: $gray;
+          width: 100%;
+          color: white;
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}

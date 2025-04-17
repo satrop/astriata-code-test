@@ -1,0 +1,61 @@
+@use "../globals/colors" as *;
+@use "../globals/mixins" as *;
+@use "../globals/globals" as *;
+
+.tray--quote {
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .blockquote-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(50% - 80px);
+      height: 1px;
+      background-color: $blue-ceo;
+    }
+
+    &::before {
+      left: 0;
+      top: 50%;
+    }
+
+    &::after {
+      right: 0;
+      top: 50%;
+    }
+  }
+
+  blockquote {
+    @include rem(28);
+    font-family: $font-title;
+    font-weight: 700;
+    color: $blue-ceo;
+
+    p {
+      padding-inline: 2rem;
+      @include figma-line-height(50, 32);
+    }
+  }
+
+  cite {
+    @include figma-line-height(30, 18);
+    padding-inline: 2rem;
+    display: block;
+    margin-top: 50px;
+    font-family: $font-body;
+    font-size: $fs-sm;
+    font-weight: 400;
+    font-style: normal;
+  }
+}

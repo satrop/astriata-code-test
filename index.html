@@ -1,27 +1,762 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Astriata Code Test</title>
-    <link rel="stylesheet" href="dist/css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Project</h1>
+    <link rel="stylesheet" href="dist/css/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="tray tray--nav">
+      <div class="tray--inner">
+        <ul class="content">
+          <li><a href="/dummy-link/">My Account</a></li>
+          <li><a href="/dummy-link/">Search</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="tray tray--header" data-background-color="gray">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color="gold-sober"></div>
+          <div data-background-color="blue-ceo"></div>
+          <div data-background-color=""></div>
+        </div>
+        <div class="content">
+          <nav>
+            <a href="/dummy-link">Discover US</a>
+          </nav>
+          <img
+            class="logo"
+            src="/src/img/logo.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <h1 class="title">Enrich your life</h1>
+        </div>
+      </div>
     </header>
-    
-    <main>
-        <section>
-            <h2>Content Section</h2>
-            <p>This is a simple project setup with HTML, SCSS, and JavaScript.</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 My Project</p>
+
+    <section class="tray tray--hero">
+      <img
+        class="background-image"
+        src="/src/img/image_0001.png"
+        alt="Ferrari's out on a drive in Italy"
+        width="1920"
+        height="823"
+      />
+      <div class="tray--inner">
+        <div class="bar">
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="blue-sober"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="text-box">
+            <div class="title">Welcome</div>
+            <p>
+              We bring members together in intimate settings around the globe,
+              providing unique opportunities for individual development through
+              shared experiences,
+              <a href="/dummy-link/">executive education</a>, valuable peer
+              relationships, and open exchange of innovative ideas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--jump" data-background-color="ivory-dark">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="text">
+            BOUNDLESS CURIOSITY: Meet the Incoming International<br />Chair of
+            the Board of Directors<br />
+            <div class="title">New</div>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="#jump1" aria-label="Jump to section 1">
+                  <img
+                    src="/src/img/thumb_0001.jpg"
+                    alt="Text for image."
+                    width="217"
+                    height="205"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#jump2" aria-label="Jump to section 2">
+                  <img
+                    src="/src/img/thumb_0002.jpg"
+                    alt="Text for image."
+                    width="338"
+                    height="205"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--stats">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="ivory"
+            data-mix-blend-mode="multiply"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="tray-title" data-background-color="blue-sober">
+            <h2 class="h2">Who we are</h2>
+          </div>
+          <ul>
+            <li>
+              <span class="number">2000</span>
+              <span class="text">member cap by invitation only</span>
+            </li>
+            <li>
+              <span class="number">65</span>
+              <span class="text">countries worldwide</span>
+            </li>
+            <li>
+              <span class="number">66</span>
+              <span class="text">rage age of membership</span>
+            </li>
+            <li>
+              <span class="number">33<span class="small">%</span></span>
+              <span class="text">members under 60</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--video">
+      <img
+        class="background-image"
+        src="/src/img/image_0002.jpg"
+        alt="Alt image description"
+        width="1920"
+        height="1064"
+      />
+      <div class="tray--inner">
+        <div class="bar">
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div data-background-color=""></div>
+        </div>
+        <div class="content">
+          <h2>Experience the Diversity of Life</h2>
+
+          <div class="content-wrapper">
+            <button class="cta-button" data-modal-target="videoModal1">
+              <span>Play video</span>
+              <div class="icon"></div>
+            </button>
+            <div class="text-box">
+              <p>
+                Explore cultures and broaden your perspective with rare entry
+                into historic places at any of our highly curated collection of
+                25+ major events annually that range widely in topic and
+                destination. Traveling with us allows you to rub elbows with
+                diverse global leaders, including foreign dignitaries,
+                government officials, ambassadors, and cultural icons.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <dialog id="videoModal1" class="video-modal">
+        <div class="modal-content">
+          <button
+            class="close-x"
+            aria-label="Close modal"
+            data-close-modal
+          ></button>
+          <h2>Experience the Diversity of Life</h2>
+          <div class="video-container">
+            <!-- Video placeholder -->
+            <div class="video-placeholder">Video will appear here</div>
+          </div>
+        </div>
+      </dialog>
+    </section>
+
+    <section class="tray tray--title" data-background-color="ivory-dark">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="tray-title" data-background-color="blue-sober">
+            <h2 class="h2">Uncommon connections</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--video">
+      <img
+        class="background-image"
+        src="/src/img/image_0003.jpg"
+        alt="Alt image description"
+        width="1920"
+        height="797"
+      />
+      <div class="tray--inner">
+        <div class="bar">
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="screen"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="content-wrapper">
+            <button class="cta-button" data-modal-target="videoModal2">
+              <span>Play video</span>
+              <div class="icon"></div>
+            </button>
+            <div class="text-box">
+              <p>
+                Enjoy extraordinary access to the world's top thinkers and
+                leaders at highly curated events tailored to the needs of the
+                member. Grow your leadership in an environment where members and
+                spouses can foster close relationships. Our intimate size builds
+                an environment of camaraderie and trust—the perfect way to build
+                community and lifelong friendships.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <dialog id="videoModal2" class="video-modal">
+        <div class="modal-content">
+          <button
+            class="close-x"
+            aria-label="Close modal"
+            data-close-modal
+          ></button>
+          <h2>Uncommon connections</h2>
+          <div class="video-container">
+            <!-- Video placeholder -->
+            <div class="video-placeholder">Second video will appear here</div>
+          </div>
+        </div>
+      </dialog>
+    </section>
+
+    <section class="tray tray--title" data-background-color="ivory-dark">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="tray-title" data-background-color="blue-sober">
+            <h2 class="h2">Discover</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--quote" data-background-color="ivory-dark">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <img
+            src="/src/img/image_0004.jpg"
+            alt="Alt text for image"
+            width="460"
+            height="683"
+          />
+          <blockquote>
+            <div class="blockquote-header">
+              <img
+                src="/src/img/quote-marks.svg"
+                alt=""
+                width="114"
+                height="73"
+              />
+            </div>
+            <p>
+              Joining isn't just about entering a room of global leaders—it's
+              about unlocking a world of wisdom and wonder. It's where the
+              exchange of groundbreaking ideas and shared adventures sparks not
+              just professional growth, but lifelong friendships. It gives me
+              the chance to discover, engage, and be inspired with peers who are
+              as passionate about exploration as they are about excellence.
+            </p>
+            <cite>
+              <strong>Susan Walker</strong> <br />Member, and President of XYZ
+              Technologies
+            </cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--cta">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <a href="/dummy-link/" class="cta-button" data-button-type="view">
+            <span>EXPLORE THE BENEFITS</span>
+            <div class="icon"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--three-up">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="three-up">
+            <div class="card">
+              <div class="card-gradient"></div>
+              <div class="card-header">
+                <h3>Exclusive Events</h3>
+              </div>
+              <div class="card-image">
+                <img
+                  src="/src/img/image_0005.jpg"
+                  alt="Text for image."
+                  width="461"
+                  height="856"
+                />
+              </div>
+              <div class="card-content">
+                <p>
+                  Education and a philosophy of lifelong learning are a shared
+                  passion of our members. Get exclusive access to the world’s
+                  top thought leaders with learning tailored to you.
+                </p>
+              </div>
+              <div class="card-footer">
+                <a
+                  href="/dummy-link/"
+                  class="cta-button"
+                  data-button-type="white"
+                >
+                  <span>View more info</span>
+                  <div class="icon"></div>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-gradient"></div>
+              <div class="card-header">
+                <h3>Global Network</h3>
+              </div>
+              <div class="card-image">
+                <img
+                  src="/src/img/image_0006.jpg"
+                  alt="Text for image."
+                  width="459"
+                  height="856"
+                />
+              </div>
+              <div class="card-content">
+                <p>
+                  Our annual and rotating series of programs with premier
+                  universities bring members access to world-class faculty and
+                  impactful learning opportunities. Our education through action
+                  approach provides hands-on exercises and collaborative
+                  team-based activities for a truly immersive experience.
+                </p>
+              </div>
+              <div class="card-footer">
+                <a
+                  href="/dummy-link/"
+                  class="cta-button"
+                  data-button-type="white"
+                >
+                  <span>View more info</span>
+                  <div class="icon"></div>
+                </a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-gradient"></div>
+              <div class="card-header">
+                <h3>Unique Experiences</h3>
+              </div>
+              <div class="card-image">
+                <img
+                  src="/src/img/image_0007.jpg"
+                  alt="Text for image."
+                  width="459"
+                  height="856"
+                />
+              </div>
+              <div class="card-content">
+                <p>
+                  Whether exploring anthropology or the arts, Fin Tech or
+                  financial markets, members broaden their perspectives and
+                  discover something new at each event.
+                </p>
+              </div>
+              <div class="card-footer">
+                <a
+                  href="/dummy-link/"
+                  class="cta-button"
+                  data-button-type="white"
+                >
+                  <span>View more info</span>
+                  <div class="icon"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--magazine">
+      <img
+        class="background-image"
+        src="/src/img/image_0009.jpg"
+        alt="Text for image."
+        width="1920"
+        height="891"
+      />
+      <div class="tray--inner">
+        <div class="overlay"></div>
+        <div class="bar">
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="overlay"
+          ></div>
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="overlay"
+          ></div>
+          <div data-background-color=""></div>
+        </div>
+        <div class="content">
+          <div class="text">
+            <div class="tray-title" data-background-color="gold-ceo">
+              <h2 class="h2">Compass Magazine</h2>
+            </div>
+            <p>
+              Membership publication featuring original content to inform and
+              engage the community with insights from relevant members
+            </p>
+            <a
+              href="/dummy-link/"
+              class="cta-button"
+              data-button-type="view"
+              data-button-clear="true"
+            >
+              <span>Read the magazine</span>
+              <div class="icon"></div>
+            </a>
+          </div>
+          <div class="image">
+            <img
+              src="/src/img/image_0008.jpg"
+              alt="Text for image."
+              width="458"
+              height="594"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--title" data-background-color="ivory-dark">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="tray-title" data-background-color="blue-sober">
+            <h2 class="h2">The Future of the Great Power Rivalry</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="tray tray--video tray--video__alt"
+      data-background-color="ivory-dark"
+    >
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="content-wrapper">
+            <img src="/src/img/image_0010.jpg" alt="Text for image." width="1430" height="780" />
+            <button class="cta-button" data-modal-target="videoModal3">
+              <span>Play video</span>
+              <div class="icon"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <dialog id="videoModal3" class="video-modal">
+        <div class="modal-content">
+          <button
+            class="close-x"
+            aria-label="Close modal"
+            data-close-modal
+          ></button>
+          <h2>The Future of the Great Power Rivalry</h2>
+          <div class="video-container">
+            <!-- Video placeholder -->
+            <div class="video-placeholder">Third video will appear here</div>
+          </div>
+        </div>
+      </dialog>
+    </section>
+
+    <section class="tray tray--title">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <div class="tray-title" data-background-color="blue-sober">
+            <h2 class="h2">
+              Boundless Curiosity: Meet the Incoming International Chair of the
+              Board of Directors 
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="tray tray--video tray--video__alt"
+      data-background-color="ivory-dark"
+    >
+      <img
+        class="background-image"
+        src="/src/img/image_0011.jpg"
+        alt="Text for image."
+        width="1920"
+        height="974"
+      />
+      <div class="tray--inner">
+        <div class="bar">
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="gold-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+          <div
+            data-background-color="blue-sober"
+            data-mix-blend-mode="screen"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tray tray--cta">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color=""></div>
+          <div data-background-color=""></div>
+          <div
+            data-background-color="blue-ceo"
+            data-mix-blend-mode="overlay"
+          ></div>
+        </div>
+        <div class="content">
+          <button class="cta-button" data-button-type="view">
+            <span>Read the story</span>
+            <div class="icon"></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="tray tray--footer" data-background-color="gray">
+      <div class="tray--inner">
+        <div class="bar">
+          <div data-background-color="gold-sober"></div>
+          <div data-background-color="gold-sober"></div>
+          <div data-background-color=""></div>
+        </div>
+        <div class="content">
+          <address class="address">
+            Organization &copy; 2024 <br />
+            1825 K Street, NW Suite 1450<br />
+            Washington, DC 20006
+          </address>
+          <div class="contact">
+            <ul>
+              <li>
+                USA Phone:
+                <a
+                  href="tel:+12028131880"
+                  aria-label="Call us at +1 202 813 1880"
+                  >+1 202 813 1880</a
+                >
+              </li>
+              <li>
+                Fax:
+                <a
+                  href="tel:+12028131881"
+                  aria-label="Call us at +1 202 813 1881"
+                  >+1 202 813 1881</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto: info@organization.org"
+                  aria-label="Email us at info@organization.org"
+                  >info@organization.org</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="social">
+            <a href="/dummy-link/">Terms &amp; Policies</a>
+            <nav>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Visit our Instagram page"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Visit our Facebook page"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Visit our LinkedIn page"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <script src="dist/js/main.js"></script>
-</body>
+    <script src="/src/js/main.js"></script>
+  </body>
 </html>
